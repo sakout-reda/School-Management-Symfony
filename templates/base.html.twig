@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Projet Symfony {% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/css/navabar.css"/>
+        <link rel="icon" href="img/fav-icon.png" sizes="32x32" />
+
+    {% endblock %}
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark mynavbar">
+    <a class="navbar-brand" href="{{ path("acceuil") }}">
+        <img src="/img/cropped-logo.png" width="200px" height="50px" style="border:2px solid black;" >
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navcss">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" ">
+                <a class="nav-link" href="{{ path("acceuil") }}">Acceuil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path("cours_index") }}">Cours</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path("professeur_index") }}">Professeur</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path("departement_index") }}">Département</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{% block body %}{% endblock %}
+{% block javascripts %}
+    <script src="/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+{% endblock %}
+</body>
 </html>

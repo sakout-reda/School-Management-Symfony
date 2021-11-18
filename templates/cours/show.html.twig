@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cours{% endblock %}
+
+{% block body %}
+<div class="card border-success mb-3" style="margin: 10px; padding: 10px">
+    <div class="card-body-success">
+    <h1>Supprimer Un Cours</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ cour.id }}</td>
+            </tr>
+            <tr>
+                <th>Intitule</th>
+                <td>{{ cour.intitule }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <button class="btn "> <a href="{{ path('cours_index') }}">Revenir à la liste</a></button>
+    {{ include('cours/_delete_form.html.twig') }}
+    </div>
+</div>
+{% endblock %}

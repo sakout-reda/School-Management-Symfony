@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Professeur{% endblock %}
+
+{% block body %}
+<div class="card border-success mb-3" style="margin: 10px; padding: 10px">
+    <div class="card-body-success">
+    <h1>Professeur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ professeur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ professeur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ professeur.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Cin</th>
+                <td>{{ professeur.cin }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ professeur.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ professeur.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ professeur.email }}</td>
+            </tr>
+            <tr>
+                <th>DateRecrutement</th>
+                <td>{{ professeur.dateRecrutement ? professeur.dateRecrutement|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+        {{ include('professeur/_delete_form.html.twig') }}
+    </div>
+</div>
+
+
+{% endblock %}

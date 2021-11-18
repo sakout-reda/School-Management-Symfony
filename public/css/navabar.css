@@ -1,0 +1,16 @@
+.mynavbar
+{
+    background-color: #2FBF71;
+}
+#navcss a
+{
+    font-size: 25px;
+    transition: .5s;
+
+}
+#navcss a:hover
+{
+    background-color: #20834D;
+    transition: .5s;
+    border-radius: 20px;
+}

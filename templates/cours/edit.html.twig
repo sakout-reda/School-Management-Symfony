@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Cours{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center;"><u>Modifier Un Cours <u/></h1>
+
+    {{ include('cours/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+{% endblock %}

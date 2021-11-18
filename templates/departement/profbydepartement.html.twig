@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Professeur{% endblock %}
+
+{% block body %}
+    <div class="card border-success mb-3"style="margin: 10px;">
+        <div class="card-body" >
+            <table class="table table-hover">
+                <thead>
+                <tr class="table-success ">
+                    <th scope="row">Id</th>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Cin</th>
+                    <th>Adresse</th>
+                    <th>Telephone</th>
+                    <th>Email</th>
+                    <th>DateRecrutement</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for professeur in professeurs %}
+                    <tr>
+                        <td>{{ professeur.id }}</td>
+                        <td>{{ professeur.nom }}</td>
+                        <td>{{ professeur.prenom }}</td>
+                        <td>{{ professeur.cin }}</td>
+                        <td>{{ professeur.adresse }}</td>
+                        <td>{{ professeur.telephone }}</td>
+                        <td>{{ professeur.email }}</td>
+                        <td>{{ professeur.dateRecrutement ? professeur.dateRecrutement|date('Y-m-d') : '' }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

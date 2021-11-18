@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Professeur{% endblock %}
+
+{% block body %}
+    <h1 style="text-align: center;"><u>Modifier Un Professeur <u/></h1>
+
+    {{ include('professeur/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+{% endblock %}

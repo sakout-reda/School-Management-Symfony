@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Departement {% endblock %}
+
+{% block body %}
+<div class="card border-success mb-3"style="margin: 10px;">
+    <div class="card-body" >
+        <h1 style="text-align: center;"><u>Liste Des Départements</u></h1>
+    <table class="table table-hover" style="font-size: 18px;">
+        <thead>
+            <tr class="table-success" >
+                <th scope="row">Id</th>
+                <th>NomDepartement</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for departement in departements %}
+            <tr>
+                <td>{{ departement.id }}</td>
+                <td>{{ departement.nomDepartement }}</td>
+                <td>
+                    <a href="{{ path('departement_edit', {'id': departement.id}) }}"><button type="button" class="btn btn-warning" >Modifier</button></a>
+                    <a href="{{ path('professeur_index_dep', {'id': departement.id}) }}"><button type="button" class="btn btn-primary" >Liste des Profs</button></a>
+                    <a href="{{ path('departement_delete', {'id': departement.id}) }}"><button type="button" class="btn btn-danger" >Supprimer</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+</div>
+    <a href="{{ path('departement_new') }}"> <button type="button" class="btn btn-success"style="margin-left: 30px;">Ajouter Un Departement</button></a>
+
+{% endblock %}
